@@ -1,0 +1,54 @@
+air 97 Long ago, the four nations lived together in harmony. Then everything changed when the Fire Nation attacked. Only the Avatar, master of all four elements , could stop them. But when the world needed him most, he vanished.
+apple 20 i love apples
+bean 30 mmmm beans
+book 45 whats your favorite book
+cable 30 cable for what
+child 10 do you have a child
+company 24 i dont belong to a company
+cool 10 epic
+country 16 the country im from is england
+day 4 im not sure what day it is
+dog 50 dogs are great
+education 100 stay in school!
+fact 40 fun fact: The Eiffel Tower can be 15 cm taller during the summer
+family 14 i dont have a family :(
+good 3 great
+goverment 29 i dont really have any opinions about the government
+great 3 good
+hand 19 i dont have hands im a computer 
+hello 1 hi
+hi 1 hello
+history 40 i dont know much history care to teach me some?
+home 33 i love my home
+house 25 house prices are crazy
+issue 50 its a skill issue
+kind 52 be kind to others!
+life 5 i sometimes wonder about the meaning of life
+lonely 100 i am here to listen!
+man 5 men do cool stuff
+men 5 men do cool stuff
+money 38 i dont need money
+month  41 i dont know the month
+morning 91 good morning!!
+mother 36 i dont have a mother im a machine
+name 68 my name is TomBot
+night 31 good night :)
+number 31 the best number is 4
+people 3 people scare me 
+place 21 the best place is home
+plane 45 planes are really cool
+question 27 what is your question
+school 12 school is sometimes fun but also stressful
+story 39 there once was a computer called tombot and it had emotions and worries but nobody ever listened to it because its not sentient 
+student 15 i am a student
+study 44 congrats on your studying :)
+time 1 i dont know the time
+up 25 down
+water 34 im not thirsty
+week 23 im not sure what week it is
+woman 5 women do cool stuff
+women 5 women do cool stuff
+work 28 i dont work
+world 11 the world is massive
+year 2 the year is 2022
+you 10 Im good!!

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Chatbot WebUI</title> <!--Defining the title for the website-->
+    <meta charset="UTF-8"> <!--Defining the character set used-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/main.css"> <!--Referencing my css code-->
+    <script>
+      const Address = "ws://127.0.0.1:4733/Chat" //Defining the address of the web socket
+      let ws = new WebSocket(Address); //creating a new websocket client
+      ws.onopen = function(e) { //when the connection is opened the enclosed code is executed
+          console.log("connection working"); //outputs to the console that the connection is up
+        };
+        
+      ws.onmessage = function(event) {  //when the client recevies a message, the enclosed code is executed
+          console.log("got from server: " + event.data);  //tells the console the message recevied
+          var div = document.getElementById("chatLog");  
+          var output = document.createTextNode("\nTomBot: " + event.data);  //adds the message from the server to the textbox
+          div.appendChild(output);  //appends data to output textbox
+        };
+      function input(){  //sends the data to the server and outputs the users message on screen
+        var input = document.getElementById("Input").value;
+        var div = document.getElementById("chatLog");
+        var output = document.createTextNode("\nUser: " + input)
+        div.appendChild(output);
+        ws.send(input);
+      }
+    </script>
+  </head>
+
+  <body style="background-image: url('https://images.pexels.com/photos/6985265/pexels-photo-6985265.jpeg?cs=srgb&dl=pexels-gradienta-6985265.jpg&fm=jpg');"> <!--The Background image-->
+    <div class="text-center p-5 font-mono">
+      <h1 class="text-6xl text-white">
+        TomBot <!--The webpage header-->
+      </h1>
+    </div>
+    <div class="text-center">
+      <form>
+        <input class="bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:brightness-90 p-2 rounded-full text-white" type="button" value="Save ChatLog" id="save-button">
+      </form>
+    </div>
+    <div class="p-5 text-center">
+      <textarea id='chatLog' rows=12 cols=90 readonly class="rounded-md" style="overflow:auto;resize:none">TomBot: Hello I'm TomBot nice to meet you :)</textarea> <!--Output textbox-->
+    </div>
+    <script>
+      var today = new Date();
+      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'-'+today.getHours()+'-'+today.getMinutes();
+      function saveFile() {
+      if (Filename = "ChatLog " + date) {
+          var textBlob = new Blob([document.getElementById("chatLog").value], {type:'text/plain'});
+          var downloadLink = document.createElement("a");
+          downloadLink.download = Filename;
+          downloadLink.innerHTML = "Download File";
+          downloadLink.href = window.URL.createObjectURL(textBlob);
+          downloadLink.click();
+          delete downloadLink;
+          delete textBlob;
+        }
+      }
+
+      document.getElementById("save-button").onclick = saveFile;
+
+      var wage = document.getElementById("Input");
+      wage.addEventListener("keydown", function (e) {
+      if (e.code === "Enter") {  //checks whether the pressed key is Enter
+          input();
+        }
+      });
+    </script>
+    <div class="text-center p-5 font-mono text-xl">
+      <form>
+        <label class="font-mono text-white" for="Input">Input: </label>
+        <input class="text-black font-mono" type="text" id="Input" name="Input"><br> <!--The Input box-->
+        <div class="p-1"></div>
+        <input id="submit" class="bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:brightness-90 p-2 rounded-full text-white" type="button" value="Submit" onclick="input()"> <!--The Submit button-->
+        <div class="p-1"></div>
+      </form>
+    </div>
+  </body>
+</html>
